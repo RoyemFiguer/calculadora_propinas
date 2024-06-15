@@ -33,21 +33,21 @@ function App() {
         </div>
 
         <div className="border border-dashed border-slate-300 p-5 rounded-lg space-y-10">
-            {order.length > 0 ? (
+            {state.order.length > 0 ? (
               <>
                 <OrderContents
-                  order={order}
-                  removeItem={removeItem}
+                  order={state.order}
+                  dispatch={dispatch}
                 />
                 
                 <TipPercentageForm 
-                  setTip={setTip}
-                  tip={tip}
+                  dispatch={dispatch}
+                  tip={state.tip}
                 />
 
                 <OrderTotals
-                  order={order}
-                  tip={tip}
+                  order={state!.order}
+                  tip={state!.tip}
                   placeOrder={placeOrder}
                 />
               </>
